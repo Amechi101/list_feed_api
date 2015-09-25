@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="ie"><![endif]-->
-<!--[if gte IE 9]><!--><html lang="en-us" class="no-js"><!--<![endif]-->
+<!--[if gte IE 9]><!--><html lang="en-us" class="no-js" data-ng-app="newsFeedApp"><!--<![endif]-->
     <head> 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="description" content="News Feed Api"></meta>
+        <meta name="description" content="News Feed Api Project"></meta>
         <meta name="author" content="Amechi Egbe"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <title>News Feed</title>
@@ -25,7 +25,9 @@
     </head>
     <body>
         <div class="mic-wrapper">            
-            <main id="mic-main" role="main"></main>
+            <main id="mic-main" role="main">
+                <div data-ng-view></div>
+            </main>
         </div>
   
         
@@ -37,16 +39,17 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-cookies.min.js"></script>
+
+        <!-- Core JS for app -->
+        <script src="newsApp/assets/js/app.js"></script>
         
-        <!-- Angular Modules -->
-        <script src="newsApp/newsApp.core.js"></script>
+        <!-- Angular Routing -->
         <script src="newsApp/newsApp.routes.js"></script>
 
         <!-- Home Components -->
         <script src="newsApp/components/home/homeController.js"></script>
         <script src="newsApp/components/home/homeService.js"></script>
 
-        
-        
+
     </body>
 </html>
