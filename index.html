@@ -11,7 +11,7 @@
         
         
         <!-- Stylesheets -->
-        <link rel="stylesheet" type="text/css" href="newsApp/assets/css/vendor/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="newsApp/assets/css/vendor/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="newsApp/assets/css/site.css">
 
         <!-- Script -->
@@ -24,7 +24,15 @@
         <![endif]-->
     </head>
     <body>
-        <div class="mic-wrapper">            
+        <div class="container"> 
+            
+            <section class="mic-search">
+                <div class="input-group search-bar">
+                    <input type="text" class="form-control" placeholder="Search by words or Submitted" autofocus />
+                    <span class="input-group-addon bar-style"><i class="glyphicon glyphicon-search"></i></span>
+                </div>
+            </section>
+                
             <main id="mic-main" role="main">
                 <div data-ng-view></div>
             </main>

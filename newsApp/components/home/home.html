@@ -1,1 +1,21 @@
-<div>{{vm.hello}}</div>
+<table>
+	<thead>
+		<tr>
+			<th>Unpulished Articles</th>
+			<th>Author</th>
+			<th>Words</th>
+			<th>Submitted</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-repeat="data in home.articlesOnPage">
+			<td class="title">{{data.title}}</td>
+			<td class="name">{{data.profile.first_name}} {{data.profile.last_name}}</td>
+			<td class="words">{{data.words}}</td>
+			<td class="time">{{data.publish_at}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<button data-ng-click="home.LoadMore();">Load More</button>
+

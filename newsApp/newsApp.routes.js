@@ -7,7 +7,7 @@ angular.module('newsFeedApp').config(function($routeProvider) {
         // route for the home page
         .when('/', {
             templateUrl : 'newsApp/components/home/home.html',
-            controller  : 'MainController',
-            controllerAs: 'vm'
+            controller  : 'HomeController',
+            controllerAs: 'home'
         });
 });
