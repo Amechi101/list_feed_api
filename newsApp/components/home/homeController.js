@@ -2,12 +2,12 @@
 
 angular.module('newsFeedApp').controller( 'HomeController', HomeController );
 
-HomeController.$inject = ['$cookies', 'ArticleData'];
+HomeController.$inject = ['ArticleData'];
 
-function HomeController( $cookies, ArticleData ) {
+function HomeController( ArticleData ) {
 	
 	var home = this;
-		
+
 	//helper for iterating through the articles
 	function Pageditems(arr, offset, limit) {
 		return arr.slice(offset, offset + limit);
@@ -19,7 +19,8 @@ function HomeController( $cookies, ArticleData ) {
 		var totalArticles = articles.data.length;
 		var currentPage = 0;
 		var articlesPerPage = 10;
-		
+
+
 		// display first set of articles
 		home.articlesOnPage = Pageditems(data, currentPage * articlesPerPage, articlesPerPage);
 

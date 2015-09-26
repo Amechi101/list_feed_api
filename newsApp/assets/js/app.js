@@ -23,7 +23,7 @@ var NewsFeedInitilazer = (function ( core, angular ) {
     core.angularModule = function() {
     	
         // create the angular module 
-		angular.module('newsFeedApp', ['ngRoute','ngCookies']);
+		angular.module('newsFeedApp', ['ngRoute', 'ngCookies']);
     }
 
     //Return Public Method
