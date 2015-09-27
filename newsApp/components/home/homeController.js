@@ -2,11 +2,22 @@
 
 angular.module('newsFeedApp').controller( 'HomeController', HomeController );
 
-HomeController.$inject = ['ArticleData'];
+HomeController.$inject = ['ArticleData', '$cookies'];
 
-function HomeController( ArticleData ) {
+function HomeController( ArticleData, $cookies ) {
 	
 	var home = this;
+
+	//collect pervious session cookies
+	home.words = $cookies.getAll().searchWords;
+	home.publish_at = $cookies.getAll().searchSubmitted;
+
+	home.filter2 = function(field1, field2) {
+      if(field2 === "" || field2 === null) return true;
+      return field1 === field2;
+    };
+
+    console.log(home)
 
 	//helper for iterating through the articles
 	function Pageditems(arr, offset, limit) {

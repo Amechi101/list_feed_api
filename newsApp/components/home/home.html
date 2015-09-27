@@ -1,16 +1,14 @@
 <section class="mic-search">
     <div class="input-group search-bar">
-        <input type="text" class="form-control" placeholder="Search by words" autofocus search-watch data-ng-model="search.words" />
+        <input type="text" class="form-control" placeholder="Search by words" autofocus data-ng-model="home.words" search-words />
        
     </div>
 </section>
 
-<section class="mic-search">
-    <div class="input-group search-bar">
-        <input type="text" class="form-control" placeholder="Search by submitted" autofocus data-ng-model="search.publish_at" />
-        
-    </div>
-</section>
+ <select search-submitted ng-model="home.publish_at" 
+	  ng-options="row.publish_at as ( row.publish_at | FromNow ) for row in home.articlesOnPage">
+	  <option value="">Search By submitted</option>
+ </select>
 <table>
 	<thead>
 		<tr>
@@ -21,7 +19,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr data-ng-repeat="data in home.articlesOnPage | filter:search:strict">
+		<tr data-ng-repeat="data in home.articlesOnPage | filter: {'publish_at' : home.publish_at }: home.filter2 | filter:{'words':  home.words}">
 			<td class="title">{{data.title}}</td>
 			<td class="name">{{data.profile.first_name}} {{data.profile.last_name}}</td>
 			<td class="words">{{data.words}}</td>

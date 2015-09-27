@@ -15,7 +15,9 @@ var NewsFeedInitilazer = (function ( core, angular ) {
      *Private Variables
      ****/
 
+    //Enter here
 
+    
     /***
      *Public API
      ****/
