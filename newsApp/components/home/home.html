@@ -1,14 +1,16 @@
-<section class="mic-search">
-    <div class="input-group search-bar">
+<section class="mic-filter">
+    <div class="input-group custom-input">
         <input type="text" class="form-control" placeholder="Search by words" autofocus data-ng-model="home.words" search-words />
-       
+    </div>
+
+    <div class="dropdown custom-dropdown">
+    	<select class="btn btn-default dropdown-toggle" 
+    		search-submitted ng-model="home.publish_at" ng-options="row.publish_at as ( row.publish_at | FromNow ) for row in home.articlesOnPage">
+			<option value="">Search By submitted</option>
+		</select>
     </div>
 </section>
 
- <select search-submitted ng-model="home.publish_at" 
-	  ng-options="row.publish_at as ( row.publish_at | FromNow ) for row in home.articlesOnPage">
-	  <option value="">Search By submitted</option>
- </select>
 <table>
 	<thead>
 		<tr>
@@ -19,8 +21,14 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr data-ng-repeat="data in home.articlesOnPage | filter: {'publish_at' : home.publish_at }: home.filter2 | filter:{'words':  home.words}">
-			<td class="title">{{data.title}}</td>
+
+		<tr data-ng-repeat="data in home.articlesOnPage | filter: {'publish_at' : home.publish_at }: home.filterCheck | filter:{'words':  home.words}">
+			<td class="title">
+				<a data-ng-href="{{data.url}}" target="_blank">
+					<img data-ng-src="{{data.image}}" alt="" height="100" width="100"  />
+				</a>
+				{{data.title}}
+			</td>
 			<td class="name">{{data.profile.first_name}} {{data.profile.last_name}}</td>
 			<td class="words">{{data.words}}</td>
 			<td class="time">{{data.publish_at | FromNow }}</td>
@@ -28,5 +36,7 @@
 	</tbody>
 </table>
 
-<button data-ng-click="home.LoadMore();">Load More</button>
+<div class="load-button" data-ng-click="home.LoadMore();">
+	<a href="">Load More</a>
+</div>
 

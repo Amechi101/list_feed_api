@@ -1,10 +1,12 @@
-/**
-    Project: News Feed
-    Version: 1.0.0
-    Author: Amechi Egbe
-    Website: http://amechiegbe.com
-    Email: amechiegbe@gmail.com
- **/
+/*------------------------------------------------------------------
+[JS Main Module]
+
+Project: News Feed
+Version: 1.0.0
+Author: Amechi Egbe
+Website: http://amechiegbe.com
+Email: amechiegbe@gmail.com
+-------------------------------------------------------------------*/
 
 "use strict";
 

@@ -1,12 +1,28 @@
+/*------------------------------------------------------------------
+[Project Stylesheet]
 
+Project: News Feed
+Version: 1.0.0
+Author: Amechi Egbe
+Website: http://amechiegbe.com
+Email: amechiegbe@gmail.com
+-------------------------------------------------------------------*/
+
+/* ==============================
+   Body
+   ============================== */
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 body {
-	font-family: 'Lato', Arial, sans-serif;
-	color: #34495e;
-	background: #ffffff;
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 12px;
+    color: #34495e;
+    background: #ffffff;
 }
 
+/* ==============================
+   Table
+   ============================== */
 table {
     border-collapse: collapse;
     margin-bottom: 3em;
@@ -18,21 +34,22 @@ td, th {
     text-align: left;
 }
 table .title {
-	font-weight: bold;
+    font-weight: bold;
+
+}
+
+table .title img {
+    max-height:auto
 }
 table .words,
 table .time {
-	color: #000;
+    color: #000;
 }
-
 th {
     background-color: #832c34;
     font-weight: bold;
     color: #fff;
     white-space: nowrap;
-}
-tbody th {
-	background-color: #2ea879;
 }
 tbody tr:nth-child(2n-1) {
     background-color: #f5f5f5;
@@ -40,4 +57,57 @@ tbody tr:nth-child(2n-1) {
 }
 tbody tr:hover {
     background-color: rgba(131,44,52,.5);
+}
+
+/* ==============================
+   Load Button
+   ============================== */
+.load-button::before {
+    border-color: #000;
+}
+
+.load-button::before {
+    height: 120px;
+    width: 120px;
+}
+
+.load-button::before{
+    content: "";
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing: border-box;
+}
+
+.load-button {
+    display: table;
+    height: 120px;
+    width: 120px;
+    margin: 0px auto 0px;
+    position: relative;
+    border: 0px solid #000;
+    box-sizing: border-box;
+}
+
+.load-button a, .load-button a:visited {
+    color: #000;
+}
+
+.load-button a {
+    font-weight: 600;
+    text-transform: uppercase;
+    display: table-cell;
+    font-size: 12px;
+    padding: 0px 9px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    z-index: 1;
 }

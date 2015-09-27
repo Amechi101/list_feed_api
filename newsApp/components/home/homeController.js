@@ -8,16 +8,17 @@ function HomeController( ArticleData, $cookies ) {
 	
 	var home = this;
 
-	//collect pervious session cookies
+	//place values for filters from session cookies 
 	home.words = $cookies.getAll().searchWords;
 	home.publish_at = $cookies.getAll().searchSubmitted;
 
-	home.filter2 = function(field1, field2) {
+
+	//check for empty and null values
+	home.filterCheck = function(field1, field2) {
       if(field2 === "" || field2 === null) return true;
       return field1 === field2;
     };
 
-    console.log(home)
 
 	//helper for iterating through the articles
 	function Pageditems(arr, offset, limit) {
@@ -64,7 +65,6 @@ function HomeController( ArticleData, $cookies ) {
 				 	var dataExtra = articles.data;
 
 				 	home.articlesOnPage = home.articlesOnPage.concat(dataExtra.slice(20,30));
-				 	
 				 	
 				});
 			}

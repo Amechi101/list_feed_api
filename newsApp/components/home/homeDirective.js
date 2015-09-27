@@ -11,15 +11,14 @@ function searchWords( $cookies ) {
         restrict: 'A',
         link: function (scope, element, attrs) {
 
-            //watch the value in the word  input field
+            //watch the value in the word input field
             scope.$watch(attrs.ngModel, function (value) {
             	
-            	if(typeof value === 'undefined') value = '';
+            	//check for undefined values
+            	if( value === '' || value === null || value === undefined ) value = '';
             	
-            	//create variable for search 
+            	//create cookie key
             	$cookies.put('searchWords', value);
-
-            	console.log('value changed, new value is: ' + value);
 
             });           
         }
@@ -32,17 +31,14 @@ function searchSubmitted( $cookies ) {
         restrict: 'A',
         link: function (scope, element, attrs) {
 
-            //watch the value in the word  input field
+            //watch the value in the submitted drop down
             scope.$watch(attrs.ngModel, function (value) {
+        	
+            	//check for empty or null values
+            	if( value === '' || value === null || value === undefined ) value = '';
             	
-            	if(typeof value === 'undefined') value = 'Search By submitted';
-            	
-            	//create variable for search 
+            	//create cookie key
             	$cookies.put('searchSubmitted', value);
-
-            	console.log('value changed, new value is: ' + value);
-
-            	console.log($cookies.getAll());
 
             });           
         }
