@@ -3,8 +3,7 @@ A simple project for loading and filtering news articles
 
 ## Installation
 1. Download or clone the repo
-2. Go into the newsApp directory 
-3. View the index.html file in your favorite browser
+2. View the index.html file in your favorite browser
 
 
 ## Getting Started
